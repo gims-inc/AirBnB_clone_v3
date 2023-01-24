@@ -38,7 +38,7 @@ def delete_review(review_id):
         abort(404)
     review.delete()
     storage.save()
-    return (jsonify({}))
+    return make_response(jsonify({}), 200)
 
 
 @app_views.route('/places/<string:place_id>/reviews', methods=['POST'])
@@ -76,4 +76,4 @@ def put_review(review_id):
                         'created_at', 'updated_at']:
             setattr(review, attr, val)
     review.save()
-    return jsonify(review.to_dict())
+    return make_response(jsonify(review.to_dict()), 200)

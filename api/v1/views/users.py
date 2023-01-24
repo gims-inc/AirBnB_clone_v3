@@ -33,7 +33,7 @@ def delete_user(user_id):
         abort(404)
     user.delete()
     storage.save()
-    return (jsonify({}))
+    return make_response(jsonify({}), 200)
 
 
 @app_views.route('/users', methods=['POST'])
@@ -62,4 +62,4 @@ def put_user(user_id):
         if attr not in ['id', 'email', 'created_at', 'updated_at']:
             setattr(user, attr, val)
     user.save()
-    return jsonify(user.to_dict())
+    return make_response(jsonify(user.to_dict()), 200)

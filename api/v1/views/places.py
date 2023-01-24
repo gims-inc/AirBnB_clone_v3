@@ -38,7 +38,7 @@ def delete_place(place_id):
         abort(404)
     place.delete()
     storage.save()
-    return (jsonify({}))
+    return make_response(jsonify({}), 200)
 
 
 @app_views.route('/cities/<string:city_id>/places', methods=['POST'])
@@ -76,7 +76,7 @@ def put_place(place_id):
                         'updated_at']:
             setattr(place, attr, val)
     place.save()
-    return jsonify(place.to_dict())
+    return make_response(jsonify(place.to_dict()), 200)
 
 
 @app_views.route('/places_search', methods=['POST'])
