@@ -160,5 +160,6 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 Second part of Airbnb: Joann Vuong
 
 Airbnb_clone-RESTful API: Gabriel Musanga
+Airbub_clone-RESTFUL API: Isaac Okai
 ## License
 Public Domain. No copy write protection. 
